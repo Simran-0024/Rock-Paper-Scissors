@@ -1,0 +1,93 @@
+*{
+    padding: 0px;
+    margin:0px;
+    text-align: center;
+
+}
+
+
+
+
+
+
+#heading{
+    height: 10vh;
+    width: 100%;
+    background-color: #172d4d;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.moves{
+    height: 20vmin;
+    width: 20vmin;
+
+    margin: 2vmin;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    border-radius: 50%;
+    flex-wrap: wrap;
+    border: 2px solid transparent;
+    gap: 5rem;
+    margin-top: 3rem;
+
+
+
+
+}
+.moves:hover{
+    cursor:pointer;
+    border: 2px solid black;
+}
+#rock{
+    background-image: url("images/rock.png");
+ 
+}
+#Paper{
+    background-image: url("images/paper.png");
+
+}
+#Scissors{
+    background-image: url("images/scissors.png");
+
+}
+.score-board{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+
+    
+}
+#user-score,#comp-score{
+    font-size:3rem
+
+}
+
+
+.msg-container{
+    margin-top: 3rem;
+
+}
+#msg{
+    background-color: #172d4d;
+    color: aliceblue;
+    display:inline;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+}
