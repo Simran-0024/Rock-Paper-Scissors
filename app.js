@@ -4,6 +4,8 @@ let compScore=0;
 const choices = document.querySelectorAll(".moves");
 const uScore=document.querySelector("#user-score"); 
 const cScore=document.querySelector("#comp-score"); 
+const msg=document.querySelector("#msg");
+
 
 
 const genComp=()=>{
@@ -13,18 +15,24 @@ const genComp=()=>{
 
 }
 const Draw=()=>{
-    console.log("It's a tie!");
+    msg.innerText=`Oops! It's a Tie`;
+    msg.style.backgroundColor="blue";
+
 }
-const checkScore=(userWin)=>{
+const checkScore=(userWin,userChoice,compChoice)=>{
     if(userWin===true){
         userScore++;
         uScore.innerText=userScore;
+        msg.innerText=`You Won! Your ${userChoice} won over ${compChoice}`;
+        msg.style.backgroundColor="green";
 
-        
+
     }
     else{
         compScore++;
         cScore.innerText=compScore;
+        msg.innerText=`You Lose! ${compChoice} won over your ${userChoice}`;
+        msg.style.backgroundColor="red";
 
     }
     
@@ -36,6 +44,7 @@ const playGame=(userChoice)=>{
 
     if(userChoice === compChoice){
         Draw();
+
     }
     else{
         let userWin=true;
@@ -54,7 +63,7 @@ const playGame=(userChoice)=>{
         }
         else if(userChoice === "paper"){
             // now computers choice can be either rock or scissors
-            if(compChoice==="Rock"){
+            if(compChoice==="rock"){
                 userWin=true;
             }
             else{
@@ -67,11 +76,11 @@ const playGame=(userChoice)=>{
 
             if (userChoice === "Scissors"){
                 // now computers choice can be either rock or paper
-                if(compChoice==="Paper"){
-                    userWin=true;
+                if(compChoice==="rock"){
+                    userWin=false;
                 }
                 else{
-                    userWin=false;
+                    userWin=true;
                 }
            
 
@@ -80,7 +89,7 @@ const playGame=(userChoice)=>{
 
  
         }
-        checkScore(userWin);
+        checkScore(userWin,userChoice,compChoice);
     }
 
 
